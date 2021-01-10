@@ -1,0 +1,9 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+										xmlns:me="clr-namespace:StylesAndResources"
+										>
+	<SolidColorBrush x:Key="{ComponentResourceKey TypeInTargetAssembly={x:Type me:DummyForSharingResources}, ResourceId=TestBg}" Color="BlueViolet"/>
+	<Style x:Key="{ComponentResourceKey TypeInTargetAssembly={x:Type me:DummyForSharingResources}, ResourceId=TestStyle}" TargetType="Border">
+		<Setter Property="Background" Value="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type me:DummyForSharingResources}, ResourceId=TestImg}}"/>
+	</Style>
+</ResourceDictionary>
