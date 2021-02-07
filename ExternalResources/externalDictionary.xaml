@@ -1,0 +1,9 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+										xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<SolidColorBrush x:Key="resourceBrush" Color="#c0e5fd"/>
+	<ImageBrush x:Key="resourceFile" ImageSource="pack://siteoforigin:,,,/resourceImages/batmobile.jpg"/>
+	<ImageBrush x:Key="resourceResource" ImageSource="resourceImages/countach.jpg"/>
+	<Style x:Key="resourceStyle" TargetType="Grid">
+		<Setter Property="Background" Value="SeaShell" />
+	</Style>
+</ResourceDictionary>

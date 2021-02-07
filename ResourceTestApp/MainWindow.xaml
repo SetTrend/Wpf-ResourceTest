@@ -1,0 +1,63 @@
+﻿<Window x:Class="ResourceTestApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:g="clr-namespace:ExternalTheme.distinguishedGrids;assembly=ExternalTheme"
+        mc:Ignorable="d"
+        Title="External Resources And Themes Test App" Height="400" Width="1000">
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*"/>
+			<ColumnDefinition Width="*"/>
+			<ColumnDefinition Width="3*"/>
+			<ColumnDefinition Width="3*"/>
+			<ColumnDefinition Width="3*"/>
+			<ColumnDefinition Width="3*"/>
+			<ColumnDefinition Width="3*"/>
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition/>
+			<RowDefinition/>
+			<RowDefinition/>
+		</Grid.RowDefinitions>
+
+		<Grid.Resources>
+			<ResourceDictionary>
+				<SolidColorBrush x:Key="localBrush" Color="Beige"/>
+				<ImageBrush x:Key="localFile" ImageSource="localImages/kuste.jpg"/>
+				<ImageBrush x:Key="localResource" ImageSource="localImages/katze.jpg"/>
+				<Style x:Key="localStyle" TargetType="Grid">
+					<Setter Property="Background" Value="Honeydew"/>
+				</Style>
+
+				<ImageBrush x:Key="externalFile" ImageSource="pack://siteoforigin:,,,/resourceImages/fields.jpg"/>
+				<ImageBrush x:Key="externalResource" ImageSource="pack://application:,,,/ExternalResources;component/resourceImages/mozart.jpg"/>
+				<ImageBrush x:Key="externalResourceAlternative" ImageSource="/ExternalResources;component/resourceImages/waterfall.jpg"/>
+
+				<ResourceDictionary.MergedDictionaries>
+					<ResourceDictionary Source="pack://application:,,,/ExternalResources;component/externalDictionary.xaml"/>
+				</ResourceDictionary.MergedDictionaries>
+			</ResourceDictionary>
+		</Grid.Resources>
+
+		<Grid Margin="2" Grid.Column="0" Grid.Row="0" Background="{StaticResource localBrush}" ToolTip="Local brush resource."></Grid>
+		<Grid Margin="2" Grid.Column="1" Grid.Row="0" Style="{StaticResource localStyle}"  ToolTip="Local style resource."></Grid>
+		<Grid Margin="2" Grid.Column="2" Grid.Row="0" Background="{StaticResource localFile}" ToolTip="Resource image, taken from application local file."></Grid>
+		<Grid Margin="2" Grid.Column="3" Grid.Row="0" Background="{StaticResource localResource}" ToolTip="Resource image, taken from application resource stream."></Grid>
+
+		<Grid Margin="2" Grid.Column="0" Grid.Row="1" Background="{StaticResource resourceBrush}" ToolTip="Brush resource, taken from external ResourceDictionary."></Grid>
+		<Grid Margin="2" Grid.Column="1" Grid.Row="1" Style="{StaticResource resourceStyle}" ToolTip="Style resource, taken from external ResourceDictionary."></Grid>
+		<Grid Margin="2" Grid.Column="2" Grid.Row="1" Background="{StaticResource resourceFile}" ToolTip="Resource image, taken from external ResourceDictionary, loosely coupled."></Grid>
+		<Grid Margin="2" Grid.Column="3" Grid.Row="1" Background="{StaticResource resourceResource}" ToolTip="Resource image, taken from external ResourceDictionary, stored in library resource stream."></Grid>
+		<Grid Margin="2" Grid.Column="4" Grid.Row="1" Background="{StaticResource externalFile}" ToolTip="Resource image, copied over from library, loosely coupled."></Grid>
+		<Grid Margin="2" Grid.Column="5" Grid.Row="1" Background="{StaticResource externalResource}" ToolTip="Resource image, taken from library resource stream."></Grid>
+		<Grid Margin="2" Grid.Column="6" Grid.Row="1" Background="{StaticResource externalResourceAlternative}" ToolTip="Resource image, taken from library resource stream (using abbreviated URL)."></Grid>
+
+		<g:Grid1 Margin="2" Grid.Column="0" Grid.Row="2" >
+			<Border Margin="10"/>
+		</g:Grid1>
+		<Grid Margin="2" Grid.Column="1" Grid.Row="2" ></Grid>
+		<Grid Margin="2" Grid.Column="2" Grid.Row="2" ></Grid>
+	</Grid>
+</Window>

@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="resourceImages\batmobile.jpg" />
+    <None Remove="resourceImages\countach.jpg" />
+    <None Remove="resourceImages\fields.jpg" />
+    <None Remove="resourceImages\mozart.jpg" />
+    <None Remove="resourceImages\waterfall.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="resourceImages\batmobile.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resourceImages\fields.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="resourceImages\countach.jpg" />
+    <Resource Include="resourceImages\mozart.jpg" />
+    <Resource Include="resourceImages\waterfall.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+</Project>

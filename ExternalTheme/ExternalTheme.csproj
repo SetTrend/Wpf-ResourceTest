@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="themeImages\cornwall.jpg" />
+    <None Remove="themeImages\foxy-lady.jpg" />
+    <None Remove="themeImages\hi-tech.jpg" />
+    <None Remove="themeImages\hi-tech2.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="themeImages\foxy-lady.jpg" />
+    <Content Include="themeImages\hi-tech.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="themeImages\cornwall.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="themeImages\hi-tech2.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Themes\generic.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+  </ItemGroup>
+
+</Project>
